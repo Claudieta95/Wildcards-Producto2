@@ -10,15 +10,7 @@
 
 <body>
 
-<nav>
-    <div class="biblioteca">Biblioteca</div>
-
-    <div class="menu">
-        <a th:href="@{/libros}">Libros</a>
-        <a th:href="@{/usuarios}">Usuarios</a>
-        <a th:href="@{/prestamos}">Préstamos</a>
-    </div>
-</nav>
+<div th:replace="~{fragments/menu :: menu}"></div>
 
 <main>
     <h1>Gestión de usuarios</h1>
