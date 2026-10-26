@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -8,35 +7,35 @@
 </head>
 <body>
 
-    <div th:replace="~{fragments/menu :: menu}"></div>
+<div th:replace="~{fragments/menu :: menu}"></div>
 
-    <main>
+<main>
 
-        <h1>Gestión de préstamos</h1>
+    <h1>Gestión de préstamos</h1>
 
-        <h2>Listado de préstamos</h2>
+    <h2>Listado de préstamos</h2>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Usuario</th>
-                    <th>ID del libro</th>
-                    <th>Fecha de préstamo</th>
-                    <th>Fecha de devolución</th>
-                </tr>
-            </thead>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>ID del libro</th>
+            <th>Fecha de préstamo</th>
+            <th>Fecha de devolución</th>
+        </tr>
+        </thead>
 
-            <tbody>
-                <tr th:each="prestamo : ${prestamos}">
-                    <td th:text="${prestamo.id}"></td>
-                    <td th:text="${prestamo.usuario.nombre}"></td>
-                    <td th:text="${prestamo.libroId}"></td>
-                    <td th:text="${prestamo.fechaPrestamo}"></td>
-                    <td th:text="${prestamo.fechaDevolucion != null ? prestamo.fechaDevolucion : 'Pendiente'}"></td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
+        <tbody>
+        <tr th:each="prestamo : ${prestamos}">
+            <td th:text="${prestamo.id}"></td>
+            <td th:text="${prestamo.usuario.nombre}"></td>
+            <td th:text="${prestamo.libro.id}"></td>
+            <td th:text="${prestamo.fechaPrestamo}"></td>
+            <td th:text="${prestamo.fechaDevolucion != null ? prestamo.fechaDevolucion : 'Pendiente'}"></td>
+        </tr>
+        </tbody>
+    </table>
+</main>
 </body>
 </html>

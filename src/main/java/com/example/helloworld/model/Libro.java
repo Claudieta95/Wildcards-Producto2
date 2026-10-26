@@ -1,7 +1,8 @@
-
 package com.example.helloworld.model;
 
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "libro")
@@ -22,6 +23,9 @@ public class Libro {
 
     @Column(name = "anio_publicacion", nullable = false)
     private Integer anioPublicacion;
+
+    @OneToMany(mappedBy = "libro")
+    private List<Prestamo> prestamos = new ArrayList<>();
 
     public Libro() {
     }
@@ -64,5 +68,13 @@ public class Libro {
 
     public void setAnioPublicacion(Integer anioPublicacion) {
         this.anioPublicacion = anioPublicacion;
+    }
+
+    public List<Prestamo> getPrestamos() {
+        return prestamos;
+    }
+
+    public void setPrestamos(List<Prestamo> prestamos) {
+        this.prestamos = prestamos;
     }
 }

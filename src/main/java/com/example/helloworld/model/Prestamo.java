@@ -1,4 +1,3 @@
-
 package com.example.helloworld.model;
 
 import jakarta.persistence.*;
@@ -19,9 +18,9 @@ public class Prestamo {
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
-    // Temporalmente guardamos el ID del libro
-    @Column(name = "libro_id")
-    private Long libroId;
+    @ManyToOne
+    @JoinColumn(name = "libro_id")
+    private Libro libro;
 
     public Prestamo() {
     }
@@ -58,11 +57,11 @@ public class Prestamo {
         this.usuario = usuario;
     }
 
-    public Long getLibroId() {
-        return libroId;
+    public Libro getLibro() {
+        return libro;
     }
 
-    public void setLibroId(Long libroId) {
-        this.libroId = libroId;
+    public void setLibro(Libro libro) {
+        this.libro = libro;
     }
 }

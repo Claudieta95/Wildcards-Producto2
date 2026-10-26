@@ -1,4 +1,3 @@
-
 package com.example.helloworld.controller;
 
 import com.example.helloworld.model.Libro;
@@ -53,7 +52,7 @@ public class LibroController {
     public String eliminarLibro(@PathVariable Long id,
                                 RedirectAttributes redirectAttributes) {
 
-        if (prestamoRepository.existsByLibroId(id)) {
+        if (prestamoRepository.existsByLibro_Id(id)) {
             redirectAttributes.addFlashAttribute(
                     "error",
                     "No se puede eliminar el libro porque tiene préstamos asociados."
