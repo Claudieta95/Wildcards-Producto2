@@ -87,6 +87,10 @@ td {
     font-family: Arial, sans-serif;
     font-size: 20px;
     font-weight: bold;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 
